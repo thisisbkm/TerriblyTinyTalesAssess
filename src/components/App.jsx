@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import "./App.css"
 const App = () => {
   const [wordFrequency, setWordFrequency] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -16,6 +16,9 @@ const App = () => {
           return acc;
         }, {});
         setWordFrequency(frequency);
+        const submit = document.getElementById("submit");
+        submit.style.left="49vw";
+        submit.style.animationName="slideOut"
         setIsLoading(false);
       })
       .catch(error => {
@@ -47,19 +50,18 @@ const App = () => {
     .map(([word, frequency]) => ({ word, frequency }));
 
   return (
-    <div>
-      <button type="button" onClick={handleButtonClick} disabled={isLoading}>
-        {isLoading ? 'Loading...' : 'Submit'}
-      </button>
-
+    <>
+        <button id='submit' type="button" onClick={handleButtonClick} disabled={isLoading}>
+            {isLoading ? 'Loading...' : 'Submit'}
+        </button>
+        <div style={{display:'flex', justifyContent:'center'}}>
       {histogramData.length > 0 && (
-        <div>
-          <h2>Word Frequency Histogram:</h2>
+        <div className='container'>
+          <h2>Word Frequency Histogram</h2>
           <BarChart width={600} height={400} data={histogramData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="word" />
+            <XAxis dataKey="word"/>
             <YAxis />
-            <Tooltip />
+            <Tooltip/>
             <Legend />
             <Bar dataKey="frequency" fill="#8884d8" />
           </BarChart>
@@ -69,6 +71,7 @@ const App = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
