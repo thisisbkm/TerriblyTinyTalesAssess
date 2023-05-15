@@ -25,11 +25,12 @@ const App = () => {
   };
 
   const handleExportClick = () => {
-    const csvContent = Object.entries(wordFrequency)
+    let csvContent = Object.entries(wordFrequency)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 20)
       .map(([word, frequency]) => `${word},${frequency}`)
-      .join('\n');
+    csvContent.unshift("Word, Frequency")
+    csvContent = csvContent.join('\n');
 
     const element = document.createElement('a');
     const file = new Blob([csvContent], { type: 'text/csv' });
