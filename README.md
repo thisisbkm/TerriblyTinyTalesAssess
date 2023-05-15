@@ -22,7 +22,7 @@ The following libraries were used in this project:
 To get started with this project, follow these steps:
 
 1. Clone the repository: `https://github.com/thisisbkm/TerriblyTinyTalesAssess.git`
-2. Navigate to the project directory: `cd word-frequency-analyzer`
+2. Navigate to the project directory: `cd TerriblyTinyTalesAssess`
 3. Install the dependencies: `npm install`
 4. Start the application: `npm start`
 5. Open your browser and go to `http://localhost:3000` to view the application.
