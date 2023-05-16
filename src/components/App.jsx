@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis,CartesianGrid, Tooltip, Legend } from 'recharts';
 import "./App.css"
 const App = () => {
   const [wordFrequency, setWordFrequency] = useState({});
@@ -58,12 +58,13 @@ const App = () => {
       {histogramData.length > 0 && (
         <div className='container'>
           <h2>Word Frequency Histogram</h2>
-          <BarChart width={600} height={400} data={histogramData}>
-            <XAxis dataKey="word"/>
+          <BarChart width={800} height={470} data={histogramData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="word" />
             <YAxis />
-            <Tooltip/>
-            <Legend />
-            <Bar dataKey="frequency" fill="#8884d8" />
+            <Tooltip />
+            <Legend/>
+            <Bar dataKey="frequency" fill="#8884d8" name="Frequency"/>
           </BarChart>
           <button type="button" onClick={handleExportClick}>
             Export
