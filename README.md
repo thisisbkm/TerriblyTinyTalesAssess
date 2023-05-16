@@ -1,10 +1,10 @@
 # Word Frequency Analyzer
 ## Terribly Tiny Tales Assignment
- 
-### Deployment Link
-This is hosted on github pages : [https://thisisbkm.github.io/TerriblyTinyTalesAssess/](https://thisisbkm.github.io/TerriblyTinyTalesAssess/)
 
 This is a React application that analyzes the word frequency of a text file and generates a histogram of the 20 most occurring words.
+
+## Deployment Link
+This application is hosted on github pages : [https://thisisbkm.github.io/TerriblyTinyTalesAssess/](https://thisisbkm.github.io/TerriblyTinyTalesAssess/)
 
 ## Libraries Used
 
